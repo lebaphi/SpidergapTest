@@ -8,9 +8,8 @@
   * Option 1
   * For simple JSON object, this is fastest way
   */
- var deepCloneSimple = function (oldObj={}){
-    return JSON.parse(JSON.stringify(oldObj));
-}
+ const deepCloneSimple = ( oldObj = {} ) => JSON.parse(JSON.stringify(oldObj));
+
 
 /**
  * Options 2
@@ -18,24 +17,20 @@
  * Need to include jQuery library
  * argument 1 must set to "true" to enable deep clone
  */
-var deepCloneJQuery = function(oldObj){
-    return jQuery.extend(true, {}, oldObj);
-}
+const deepCloneJQuery = ( oldObj = {} ) => jQuery.extend(true, {}, oldObj);
 
 /**
  * Option 3
  * If you are using angular, can use angular.copy()
  */
-var deepCloneAngular = function(oldObj){
-    return angular.copy(oldObj);
-}
+const deepCloneAngular = ( oldObj = {} ) => angular.copy(oldObj);
 
 /**
  * Option 4
  * Write by yourself
  * @param {*} oldObject 
  */
-function deepClone(oldObject={}) {
+const deepClone = ( oldObject = {} ) => {
     var cloneObject;
     if (typeof oldObject !== 'object'){
         return oldObject;
